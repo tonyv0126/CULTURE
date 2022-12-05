@@ -56,7 +56,7 @@ function answer(name, id){
       {
         if (rate.checked && rate.id == "correct")
         {
-            output.innerText = `Correct the answer is: ${rate.value}.  Next question? ` ;
+            output.innerHTML = '<span style="color:green"> Correct. </span> Next question ? ' ;
             n=1;
 
 
@@ -74,13 +74,20 @@ function answer(name, id){
 
             }
 
+            else if (name.includes("history"))
+            {
+
+                document.getElementById("next3").style.animation = 'glownext 1500ms infinite';
+
+            }
+
         }
 
       });
 
       if (n == 0)
       {
-          output.innerText = "Wrong, try Again";
+          output.innerHTML = '<span style="color:red"> Wrong. </span> try Again ';
           no_heart -= 1;
           healthbar.style.animation = 'glowred 1s';
 
@@ -102,7 +109,9 @@ function showheart(no)
     if (no == 0)
     {
       document.getElementById("healthbar").style.background =  'red';
-      document.getElementById("healthbar").innerHTML =  ' No more heart?! Refresh page to try again :)';
+      document.getElementById("healthbar").innerHTML =  ' Game over! Refresh page to try again :)';
+      document.getElementById("healthbar").style.animation = 'glowred 1500ms infinite';
+      document.getElementById("gameover").style.display = 'block';
     }
 
 

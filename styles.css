@@ -18,10 +18,12 @@ a {
     border-radius: 12px;
     padding: 32x 16px;
     font-size: 25px;
-    background-color: #fff
+    background-color: #fff;
     border: none;
 
 }
+
+.button-header:hover {background-color: #7c7c7c}
 
 .category {
     font: 50px italic Verdana, cursive;
@@ -178,6 +180,19 @@ a {
     border-radius: 12px;
   }
 
+
+#gameover {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.75)  no-repeat center center;
+    content: "Important";
+    z-index: 10000;
+}
 
 
   @keyframes glowred {
